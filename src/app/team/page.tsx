@@ -55,7 +55,7 @@ const leaders = [
         bio: "With a keen eye for operational excellence and technological advancement, Ankit Pachauri oversees the execution of our projects. He ensures quality, efficiency, and client satisfaction at every touchpoint.",
         expertise: ["Operational Excellence", "Product Execution", "Client Success"],
         quote: "Excellence is a habit, not an act. We strive for perfection in every line of code and every pixel.",
-        image: "/teams/ankit.png", // Using user provided path
+        image: "#", // Using user provided path
         social: { linkedin: "#", twitter: "#", email: "mailto:ankit@kalatram.com" }
     }
 ]
