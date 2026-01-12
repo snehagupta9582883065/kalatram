@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 import { ProposalModal } from "@/components/ProposalModal"
 
 const navLinks = [
-    { name: "Services", href: "#", hasMegaMenu: true },
+    { name: "Services", href: "/services", hasMegaMenu: true },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Our Approach", href: "/our-approach" },
     { name: "Team", href: "/team" },
