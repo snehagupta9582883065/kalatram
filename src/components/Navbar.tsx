@@ -9,43 +9,45 @@ import { cn } from "@/lib/utils"
 import { ProposalModal } from "@/components/ProposalModal"
 
 const navLinks = [
-    { name: "Services", href: "/services", hasMegaMenu: true },
+    { name: "Services", href: "#", hasMegaMenu: true },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Our Approach", href: "/our-approach" },
+    { name: "Team", href: "/team" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "Login", href: "/login" },
 ]
 
 const servicesData = [
     {
         category: "Development",
         items: [
-            { name: "Web Development", href: "/web-development" },
-            { name: "App Development", href: "/app-development" },
-            { name: "Ecommerce Solutions", href: "/ecommerce" },
-            { name: "Shopify Development", href: "/shopify" },
-            { name: "Website Maintenance", href: "/maintenance" },
+            { name: "Web Development", href: "/development/web-development" },
+            { name: "App Development", href: "/development/app-development" },
+            { name: "Ecommerce Solutions", href: "/development/ecommerce" },
+            { name: "Shopify Development", href: "/development/shopify" },
+            { name: "Website Maintenance", href: "/development/maintenance" },
         ]
     },
     {
         category: "Marketing",
         items: [
-            { name: "Digital Marketing", href: "/digital-marketing" },
-            { name: "SEO Services", href: "/seo" },
-            { name: "PPC Management", href: "/ppc" },
-            { name: "Social Media Marketing", href: "/social-media" },
-            { name: "Email Marketing", href: "/email-marketing" },
+            { name: "Digital Marketing", href: "/marketing/digital-marketing" },
+            { name: "SEO Services", href: "/marketing/seo" },
+            { name: "PPC Management", href: "/marketing/ppc" },
+            { name: "Social Media Marketing", href: "/marketing/social-media" },
+            { name: "Email Marketing", href: "/marketing/email-marketing" },
         ]
     },
     {
         category: "Design",
         items: [
-            { name: "Graphic Designing", href: "/graphic-design" },
-            { name: "Logo Design", href: "/logo-design" },
-            { name: "UI/UX Design", href: "/ui-ux" },
-            { name: "Brand Identity", href: "/branding" },
-            { name: "Brochure Design", href: "/brochure" },
+            { name: "Graphic Designing", href: "/design/graphic-design" },
+            { name: "Logo Design", href: "/design/logo-design" },
+            { name: "UI/UX Design", href: "/design/ui-ux" },
+            { name: "Brand Identity", href: "/design/branding" },
+            { name: "Brochure Design", href: "/design/brochure" },
         ]
     }
 ]
@@ -112,7 +114,7 @@ export function Navbar() {
                         <div className="flex items-center gap-6">
                             <button
                                 onClick={() => setIsModalOpen(true)}
-                                className="hidden lg:block btn-webfx btn-action px-8"
+                                className="hidden lg:block btn-kalatram btn-action px-8"
                             >
                                 Get My Free Proposal
                             </button>
@@ -230,7 +232,7 @@ export function Navbar() {
                                         setIsMobileMenuOpen(false)
                                         setIsModalOpen(true)
                                     }}
-                                    className="btn-webfx btn-action w-full py-4 mt-4"
+                                    className="btn-kalatram btn-action w-full py-4 mt-4"
                                 >
                                     Get My Free Proposal
                                 </button>

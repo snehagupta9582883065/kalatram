@@ -1,316 +1,286 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
-import {
-    Monitor, Smartphone, Cloud, Cpu, Shield, Globe,
-    ArrowRight, Sparkles, CheckCircle2, Layers,
-    Zap, Code2, Database, Rocket, Terminal
-} from "lucide-react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
-import { PageTransition } from "@/components/Animations/PageTransition"
-import { Magnetic } from "@/components/Animations/Magnetic"
-import { Reveal, StaggerContainer } from "@/components/Animations/Reveal"
-import { cn } from "@/lib/utils"
+import { Reveal } from "@/components/Animations/Reveal"
+import { ArrowRight, Code2, Megaphone, PenTool, Globe, Smartphone, Box, Shield, Zap, Search, Share2, Mail, Layout, Layers, Image, ArrowUpRight } from "lucide-react"
+import Link from "next/link"
+import { motion } from "framer-motion"
 
+// --- Data ---
 const services = [
     {
-        icon: Monitor,
-        title: "Web Architecture",
-        tagline: "Lumina-Grade Performance",
-        description: "We don't build sites; we craft self-scaling digital habitats. Optimized for LCP, CLS, and core web vitals at the highest tier.",
-        color: "from-blue-500/10 to-cyan-500/10",
-        features: ["Next.js 15 PWA Architecture", "Edge-Cached Real-time Delivery", "Vercel Enterprise Scaling"]
+        id: "01",
+        title: "Development",
+        subtitle: "Engineering Excellence",
+        description: "We build scalable, high-performance digital infrastructure that powers your business growth.",
+        color: "bg-blue-600",
+        lightColor: "bg-blue-50",
+        textColor: "text-blue-600",
+        items: [
+            { name: "Web Development", href: "/development/web-development", icon: Globe },
+            { name: "App Development", href: "/development/app-development", icon: Smartphone },
+            { name: "Ecommerce", href: "/development/ecommerce", icon: Box },
+            { name: "Shopify", href: "/development/shopify", icon: Layout },
+            { name: "Maintenance", href: "/development/maintenance", icon: Shield },
+        ]
     },
     {
-        icon: Smartphone,
-        title: "Mobile Innovation",
-        tagline: "Native Feel, Infinite Scale",
-        description: "Multi-platform applications with pixel-perfect intent. Leveraging GPU acceleration for fluid 120fps animations.",
-        color: "from-purple-500/10 to-indigo-500/10",
-        features: ["React Native Hub", "Metal & Vulkan Optimization", "Cross-Platform Sync Engine"]
+        id: "02",
+        title: "Marketing",
+        subtitle: "Growth & Acquisition",
+        description: "Data-driven strategies designed to increase visibility, traffic, and revenue.",
+        color: "bg-orange-500",
+        lightColor: "bg-orange-50",
+        textColor: "text-orange-600",
+        items: [
+            { name: "Digital Marketing", href: "/marketing/digital-marketing", icon: Megaphone },
+            { name: "SEO Services", href: "/marketing/seo", icon: Search },
+            { name: "PPC Management", href: "/marketing/ppc", icon: Zap },
+            { name: "Social Media", href: "/marketing/social-media", icon: Share2 },
+            { name: "Email Marketing", href: "/marketing/email-marketing", icon: Mail },
+        ]
     },
     {
-        icon: Cpu,
-        title: "AI Neural Ops",
-        tagline: "Intelligent Autonomy",
-        description: "Deploying proprietary LLMs and vector databases directly into your operational core for predictive dominance.",
-        color: "from-primary/10 to-secondary/10",
-        features: ["Custom Model Quantization", "RAG Pipeline Integration", "Autonomous Agent Swarms"]
-    },
-    {
-        icon: Cloud,
-        title: "Cloud Infrastructure",
-        tagline: "Fortified Resilience",
-        description: "Serverless frameworks that mitigate single points of failure while maintaining global state synchronization.",
-        color: "from-pink-500/10 to-rose-500/10",
-        features: ["Terraform Managed Clusters", "Zero-Trust Mesh Networks", "Multi-Region Redundancy"]
-    },
-    {
-        icon: Shield,
-        title: "Digital Defense",
-        tagline: "Absolute Security",
-        description: "Proactive threat hunting and encryption protocols that exceed SOC2 and HIPAA standards globally.",
-        color: "from-emerald-500/10 to-teal-500/10",
-        features: ["Continuous Pen-Testing", "End-to-End Field Level Encryption", "AI-Driven Threat Detection"]
-    },
-    {
-        icon: Globe,
-        title: "Ecosystem Strategy",
-        tagline: "Visionary Roadmaps",
-        description: "Translating complex business requirements into elegant technological roadmaps for market leadership.",
-        color: "from-orange-500/10 to-amber-500/10",
-        features: ["Legacy Asset Decoupling", "Microservices Migration", "Technology Gap Analysis"]
+        id: "03",
+        title: "Design",
+        subtitle: "Visual Identity",
+        description: "Award-winning aesthetics that communicate your brand value and build trust.",
+        color: "bg-purple-600",
+        lightColor: "bg-purple-50",
+        textColor: "text-purple-600",
+        items: [
+            { name: "Graphic Design", href: "/design/graphic-design", icon: Image },
+            { name: "Logo Design", href: "/design/logo-design", icon: PenTool },
+            { name: "UI/UX Design", href: "/design/ui-ux", icon: Layout },
+            { name: "Branding", href: "/design/branding", icon: Layers },
+            { name: "Brochure", href: "/design/brochure", icon: Image },
+        ]
     }
 ]
 
-const methodology = [
-    { step: "01", title: "Discovery Node", desc: "Deep technical audit and alignment with business objectives.", icon: Terminal },
-    { step: "02", title: "Architecture", desc: "Blueprinting high-availability systems and data schemas.", icon: Layers },
-    { step: "03", title: "Execution", desc: "Rapid assembly of robust, typed, and tested codebases.", icon: Code2 },
-    { step: "04", title: "Deployment", desc: "Automated rolling releases with zero downtime protocols.", icon: Rocket },
-]
+// --- Visual Components (Iconscapes) ---
 
-const techStack = [
-    { name: "Next.js", category: "Core" },
-    { name: "TypeScript", category: "Logic" },
-    { name: "Framer Motion", category: "Motion" },
-    { name: "PostgreSQL", category: "Data" },
-    { name: "Tailwind CSS", category: "Styling" },
-    { name: "AWS", category: "Cloud" },
-    { name: "PyTorch", category: "AI" },
-    { name: "Docker", category: "Vessel" },
-]
-
-export default function ServicesPage() {
-    const containerRef = useRef<HTMLDivElement>(null)
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end start"]
-    })
-
-    const textY = useTransform(scrollYProgress, [0, 1], [0, 200])
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-
+function DevVisual() {
     return (
-        <main className="bg-background min-h-screen">
+        <div className="relative w-full h-[400px] md:h-full min-h-[400px] bg-gradient-to-br from-blue-50 to-white rounded-[2rem] overflow-hidden border border-blue-100/50 shadow-inner">
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.2]" />
+
+            {/* Floating Elements */}
+            <motion.div
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/4 left-1/4 bg-white p-6 rounded-2xl shadow-xl border border-blue-100 z-10"
+            >
+                <Code2 size={48} className="text-blue-600" />
+            </motion.div>
+
+            <motion.div
+                animate={{ y: [0, 30, 0], x: [0, 10, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-1/3 right-1/4 bg-blue-600 p-8 rounded-full shadow-xl shadow-blue-500/30 z-20"
+            >
+                <Zap size={40} className="text-white" />
+            </motion.div>
+
+            {/* Glass Card */}
+            <div className="absolute bottom-12 left-12 right-12 bg-white/60 backdrop-blur-md p-6 rounded-xl border border-white/50 shadow-lg">
+                <div className="flex items-center gap-4">
+                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                    <div className="h-2 w-24 bg-gray-200 rounded-full" />
+                </div>
+                <div className="mt-4 space-y-2">
+                    <div className="h-2 w-full bg-gray-100 rounded-full" />
+                    <div className="h-2 w-3/4 bg-gray-100 rounded-full" />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function MarketingVisual() {
+    return (
+        <div className="relative w-full h-[400px] md:h-full min-h-[400px] bg-gradient-to-br from-orange-50 to-white rounded-[2rem] overflow-hidden border border-orange-100/50 shadow-inner">
+            {/* Abstract Circles */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100/50 rounded-full blur-3xl -mr-16 -mt-16" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-red-50/50 rounded-full blur-3xl -ml-20 -mb-20" />
+
+            <motion.div
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-3xl shadow-[0_20px_50px_rgba(249,115,22,0.15)] border border-orange-100 z-10"
+            >
+                <Megaphone size={64} className="text-orange-500" />
+            </motion.div>
+
+            {/* Orbiting Elements */}
+            <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/2 left-1/2 w-[280px] h-[280px] -translate-x-1/2 -translate-y-1/2 border border-dashed border-orange-200 rounded-full"
+            >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-orange-400">
+                    <Share2 size={24} />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-orange-400">
+                    <Search size={24} />
+                </div>
+            </motion.div>
+        </div>
+    )
+}
+
+function DesignVisual() {
+    return (
+        <div className="relative w-full h-[400px] md:h-full min-h-[400px] bg-gradient-to-br from-purple-50 to-white rounded-[2rem] overflow-hidden border border-purple-100/50 shadow-inner">
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.4]" />
+
+            <div className="absolute inset-12 border-2 border-purple-100 rounded-xl" />
+            <div className="absolute top-12 left-12 w-16 h-16 border-t-2 border-l-2 border-purple-300 rounded-tl-xl" />
+            <div className="absolute bottom-12 right-12 w-16 h-16 border-b-2 border-r-2 border-purple-300 rounded-br-xl" />
+
+            <motion.div
+                animate={{ rotate: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/3 right-1/4 z-10"
+            >
+                <div className="bg-white p-6 rounded-2xl shadow-xl border border-purple-100 rotate-12">
+                    <PenTool size={40} className="text-purple-500" />
+                </div>
+            </motion.div>
+
+            <motion.div
+                animate={{ rotate: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute bottom-1/3 left-1/4 z-10"
+            >
+                <div className="bg-purple-600 p-6 rounded-2xl shadow-xl rotate-[-12deg]">
+                    <Layers size={40} className="text-white" />
+                </div>
+            </motion.div>
+        </div>
+    )
+}
+
+// --- Main Page Component ---
+export default function ServicesPageV4() {
+    return (
+        <main className="min-h-screen bg-white">
             <Navbar />
-            <PageTransition>
-                {/* Cinematic Hero - Enlarged and Impactful */}
-                <section
-                    ref={containerRef}
-                    className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden"
-                >
-                    <motion.div
-                        style={{ y: textY, opacity }}
-                        className="max-w-7xl mx-auto px-6 text-center z-10 relative flex flex-col items-center"
-                    >
-                        <Reveal width="100%">
-                            <div className="flex justify-center mb-12">
-                                <div className="inline-flex items-center gap-3 px-8 py-3 rounded-full obsidian-glass border border-white/10 text-xs font-black tracking-[0.4em] uppercase text-primary shadow-2xl">
-                                    <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
-                                    The Services Protocol
+
+            {/* --- Hero Section --- */}
+            <section className="pt-32 pb-24 px-6 relative overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-50/60 rounded-[100%] blur-[120px] -z-10" />
+
+                <div className="container max-w-[1400px] mx-auto text-center">
+                    <Reveal width="100%">
+                        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white border border-gray-100 shadow-sm text-[#004c8c] text-xs font-bold uppercase tracking-widest mb-10 hover:shadow-md transition-shadow cursor-default group">
+                            <div className="w-2 h-2 rounded-full bg-[#f68d2e] group-hover:scale-125 transition-transform" />
+                            World Class Expertise
+                        </div>
+                    </Reveal>
+
+                    <Reveal width="100%" delay={0.1}>
+                        <h1 className="text-5xl md:text-8xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                            Transforming Ideas Into <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004c8c] via-[#0066cc] to-[#00b4d8]">
+                                Digital Reality
+                            </span>
+                        </h1>
+                    </Reveal>
+
+                    <Reveal width="100%" delay={0.2}>
+                        <p className="text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-medium">
+                            We bring together design, technology, and strategy to build products that define categories.
+                        </p>
+                    </Reveal>
+                </div>
+            </section>
+
+            {/* --- Staggered Services Sections --- */}
+            <div className="pb-32 space-y-32">
+                {services.map((category, index) => (
+                    <section key={category.title} className="px-6 relative group" id={category.title.toLowerCase()}>
+                        <div className="container max-w-[1400px] mx-auto">
+                            <div className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+
+                                {/* Visual Side (Iconscape) */}
+                                <div className="w-full lg:w-1/2">
+                                    <Reveal width="100%" delay={0.2}>
+                                        {category.id === "01" && <DevVisual />}
+                                        {category.id === "02" && <MarketingVisual />}
+                                        {category.id === "03" && <DesignVisual />}
+                                    </Reveal>
+                                </div>
+
+                                {/* Content Side */}
+                                <div className="w-full lg:w-1/2">
+                                    <Reveal width="100%">
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <span className={`text-6xl font-black ${category.lightColor} ${category.textColor} px-4 py-2 rounded-2xl`}>
+                                                {category.id}
+                                            </span>
+                                            <div className="h-px bg-gray-100 flex-grow" />
+                                        </div>
+
+                                        <h2 className="text-4xl md:text-5xl font-black text-[#212529] mb-4">
+                                            {category.title}
+                                        </h2>
+                                        <p className="text-xl text-gray-500 font-medium leading-relaxed mb-10">
+                                            {category.description}
+                                        </p>
+
+                                        {/* Service List */}
+                                        <div className="space-y-3">
+                                            {category.items.map((item, i) => (
+                                                <Link key={item.name} href={item.href} className="group/item block">
+                                                    <div className="flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 transition-all duration-300 border border-transparent hover:border-gray-100">
+                                                        <div className="flex items-center gap-4">
+                                                            <div className={`w-10 h-10 rounded-lg ${category.lightColor} flex items-center justify-center ${category.textColor} group-hover/item:scale-110 transition-transform`}>
+                                                                <item.icon size={20} />
+                                                            </div>
+                                                            <span className="text-lg font-bold text-[#212529] group-hover/item:text-[#004c8c] transition-colors">
+                                                                {item.name}
+                                                            </span>
+                                                        </div>
+                                                        <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover/item:border-[#004c8c] group-hover/item:bg-[#004c8c] group-hover/item:text-white transition-all">
+                                                            <ArrowUpRight size={14} />
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </Reveal>
                                 </div>
                             </div>
-                        </Reveal>
-                        <Reveal delay={0.1} y={60} width="100%">
-                            <h1 className="text-[5rem] md:text-[11rem] font-black mb-12 tracking-[-0.05em] leading-[0.85] text-foreground uppercase italic">
-                                Engineered <br />
-                                <span className="text-gradient">For Growth.</span>
-                            </h1>
-                        </Reveal>
-                        <Reveal delay={0.2} y={40} width="100%">
-                            <p className="text-xl md:text-4xl text-foreground/60 max-w-5xl mx-auto font-medium leading-[1.3] mb-20 tracking-tight text-center px-6">
-                                We deploy <span className="text-foreground">custom technological assets</span> that don&apos;t just function—they dominate. Performance-driven, luxury-crafted.
-                            </p>
-                        </Reveal>
-                        <Reveal delay={0.3} width="100%">
-                            <div className="flex justify-center">
-                                <Magnetic distance={0.2}>
-                                    <button className="btn-premium px-16 py-7 text-2xl group shadow-[0_20px_60px_-15px_rgba(14,165,233,0.5)]">
-                                        Explore Solutions <ArrowRight className="ml-4 w-8 h-8 group-hover:translate-x-3 transition-transform duration-500" />
-                                    </button>
-                                </Magnetic>
-                            </div>
-                        </Reveal>
-                    </motion.div>
-
-                    {/* Decorative Elements - Dark & Moody */}
-                    <div className="absolute inset-0 z-[-1] pointer-events-none">
-                        <div className="absolute top-[20%] left-[30%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[160px]" />
-                        <div className="absolute bottom-[10%] right-[20%] w-[700px] h-[700px] bg-secondary/10 rounded-full blur-[180px]" />
-                    </div>
-
-                    <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
-                </section>
-
-                {/* Growth Stats Bar - WebFX Influence */}
-                <section className="relative z-30 -mt-20 px-6">
-                    <div className="max-w-7xl mx-auto obsidian-glass p-12 md:p-20 rounded-[4rem] border border-white/10 shadow-3xl text-center grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 items-center">
-                        <div>
-                            <div className="text-5xl md:text-7xl font-black text-foreground mb-3">$4.8B+</div>
-                            <div className="text-sm font-black uppercase tracking-[0.3em] text-primary">Revenue Generated</div>
                         </div>
-                        <div className="border-y md:border-y-0 md:border-x border-white/10 py-10 md:py-0">
-                            <div className="text-5xl md:text-7xl font-black text-foreground mb-3">785%</div>
-                            <div className="text-sm font-black uppercase tracking-[0.3em] text-primary">Avg. ROI Increase</div>
-                        </div>
-                        <div>
-                            <div className="text-5xl md:text-7xl font-black text-foreground mb-3">15+</div>
-                            <div className="text-sm font-black uppercase tracking-[0.3em] text-primary">Years Experience</div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                ))}
+            </div>
 
-                {/* Primary Services Grid */}
-                <section id="services-grid" className="relative z-20 py-48 px-6 max-w-7xl mx-auto">
-                    <StaggerContainer>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-32">
-                            {services.map((service, index) => (
-                                <motion.div
-                                    key={service.title}
-                                    variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
-                                    className="glass-card obsidian-glass p-14 group relative flex flex-col h-full overflow-hidden shadow-2xl border border-white/5"
-                                >
-                                    <div className={cn(
-                                        "w-20 h-20 rounded-[2.5rem] mb-12 flex items-center justify-center bg-gradient-to-br transition-all duration-1000 group-hover:scale-110 group-hover:rotate-[15deg] shadow-2xl",
-                                        service.color
-                                    )}>
-                                        <service.icon className="text-primary w-10 h-10" />
-                                    </div>
+            {/* --- CTA --- */}
+            <section className="py-24 bg-[#004c8c] relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05]" />
 
-                                    <span className="text-primary text-[10px] font-black tracking-[0.4em] uppercase mb-5 block">
-                                        {service.tagline}
-                                    </span>
-                                    <h3 className="text-4xl font-black mb-8 tracking-[-0.02em] group-hover:text-primary transition-colors text-foreground uppercase italic leading-[1.1]">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-foreground/50 leading-relaxed mb-12 flex-grow text-xl font-medium tracking-tight">
-                                        {service.description}
-                                    </p>
+                {/* Decorative Blobs */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#f68d2e]/20 rounded-full blur-3xl" />
 
-                                    <ul className="space-y-5 mb-14 border-t border-white/5 pt-10">
-                                        {service.features.map(feature => (
-                                            <li key={feature} className="flex items-center gap-5 text-lg text-foreground/60 transition-colors group-hover:text-foreground/80">
-                                                <div className="w-2 h-2 rounded-full bg-primary/40 shrink-0" />
-                                                <span className="font-bold text-sm tracking-tight">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                <div className="container max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <Reveal width="100%">
+                        <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">
+                            Your Vision. Our Code.
+                        </h2>
+                        <p className="text-blue-100 text-xl font-medium mb-10 max-w-2xl mx-auto">
+                            Let's collaborate to build something extraordinary.
+                        </p>
+                        <Link href="/contact" className="btn-kalatram bg-white text-[#004c8c] hover:bg-gray-100 py-5 px-12 text-lg shadow-xl inline-flex items-center gap-2 border-none">
+                            Schedule a Consultation <ArrowRight size={20} />
+                        </Link>
+                    </Reveal>
+                </div>
+            </section>
 
-                                    <Magnetic distance={0.2}>
-                                        <button className="flex items-center gap-3 text-sm font-black uppercase tracking-[0.2em] text-primary group-hover:gap-8 transition-all duration-700">
-                                            Specs <ArrowRight className="w-6 h-6" />
-                                        </button>
-                                    </Magnetic>
-
-                                    {/* Hover Glow Effect */}
-                                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </StaggerContainer>
-                </section>
-
-                {/* Methodology Timeline - Dark Theme Boost */}
-                <section className="py-56 bg-white/[0.02] border-y border-white/5 relative overflow-hidden">
-                    <div className="max-w-7xl mx-auto px-6 relative z-10">
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-32 gap-12">
-                            <div className="max-w-3xl">
-                                <Reveal>
-                                    <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Execution Strategy</span>
-                                </Reveal>
-                                <Reveal delay={0.1}>
-                                    <h2 className="text-7xl md:text-[8.5rem] font-black tracking-[-0.05em] text-foreground uppercase italic leading-[0.85]">The Growth <br /><span className="text-gradient">Engine.</span></h2>
-                                </Reveal>
-                            </div>
-                            <Reveal delay={0.2}>
-                                <p className="text-2xl text-foreground/40 max-w-sm mb-6 font-medium leading-relaxed italic">Our precision-tuned methodology for extreme technical and business scale.</p>
-                            </Reveal>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 relative">
-                            <div className="hidden md:block absolute top-[70px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0" />
-
-                            {methodology.map((m, i) => (
-                                <motion.div
-                                    key={m.title}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    initial={{ opacity: 0, y: 50 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                                    className="relative z-10 text-center flex flex-col items-center group"
-                                >
-                                    <div className="w-28 h-28 rounded-[3rem] obsidian-glass border border-white/10 shadow-3xl flex items-center justify-center text-primary mb-12 group-hover:scale-110 group-hover:rotate-[15deg] transition-all duration-700 bg-white/5">
-                                        <m.icon className="w-12 h-12" />
-                                    </div>
-                                    <span className="text-[12px] font-black text-primary/30 tracking-[0.6em] mb-6 block">{m.step}</span>
-                                    <h4 className="text-3xl font-black mb-6 tracking-tight text-foreground uppercase italic">{m.title}</h4>
-                                    <p className="text-foreground/40 leading-relaxed text-sm max-w-xs font-bold">{m.desc}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Tech Stack Pulse - Grid Refinement */}
-                <section className="py-56 px-6">
-                    <div className="max-w-7xl mx-auto">
-                        <Reveal>
-                            <h2 className="text-5xl md:text-[7rem] font-black text-center mb-32 tracking-[-0.05em] text-foreground uppercase italic">The Tech <span className="text-gradient">Arsenal.</span></h2>
-                        </Reveal>
-
-                        <StaggerContainer>
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                                {techStack.map((tech) => (
-                                    <motion.div
-                                        key={tech.name}
-                                        variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1 } }}
-                                        className="obsidian-glass p-10 rounded-[3rem] flex items-center justify-between group hover:border-primary/50 transition-all duration-700 border border-white/5 shadow-2xl"
-                                    >
-                                        <div>
-                                            <p className="text-[10px] font-black text-primary tracking-[0.4em] uppercase mb-2">{tech.category}</p>
-                                            <h4 className="text-2xl font-black text-foreground uppercase italic">{tech.name}</h4>
-                                        </div>
-                                        <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-700 text-foreground/40">
-                                            <Zap className="w-6 h-6 fill-current" />
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </StaggerContainer>
-                    </div>
-                </section>
-
-                {/* High-Impact CTA */}
-                <section className="py-64 px-6 relative overflow-hidden border-t border-white/5">
-                    <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-                        <Reveal>
-                            <div className="w-24 h-24 rounded-[2.5rem] obsidian-glass flex items-center justify-center mb-16 shadow-[0_0_80px_-20px_rgba(14,165,233,0.5)] border border-white/10 bg-white/5">
-                                <Rocket className="text-primary w-12 h-12" />
-                            </div>
-                        </Reveal>
-                        <Reveal delay={0.1}>
-                            <h2 className="text-7xl md:text-[10rem] font-black mb-14 tracking-[-0.05em] leading-[0.85] text-foreground uppercase italic">
-                                Begin Your <br /><span className="text-gradient">Ascension.</span>
-                            </h2>
-                        </Reveal>
-                        <Reveal delay={0.2}>
-                            <p className="text-2xl md:text-4xl text-foreground/40 max-w-4xl mb-24 font-medium italic">
-                                Secure your slot in our next development cycle. Expert high-performance consultation available.
-                            </p>
-                        </Reveal>
-                        <Reveal delay={0.3}>
-                            <Magnetic distance={0.2}>
-                                <button className="btn-premium px-20 py-10 text-3xl shadow-[0_30px_100px_-20px_rgba(14,165,233,0.6)]">
-                                    Initiate Protocol <ArrowRight className="ml-6 w-10 h-10" />
-                                </button>
-                            </Magnetic>
-                        </Reveal>
-                    </div>
-                </section>
-            </PageTransition>
             <Footer />
         </main>
     )

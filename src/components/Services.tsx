@@ -101,7 +101,7 @@ export function Services() {
 
                 <div className="mt-24 text-center">
                     <Reveal>
-                        <Link href="/services" className="btn-webfx py-6 px-16 text-xl">
+                        <Link href="/services" className="btn-kalatram py-6 px-16 text-xl">
                             Explore All 50+ Services
                         </Link>
                     </Reveal>

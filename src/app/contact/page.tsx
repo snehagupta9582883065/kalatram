@@ -153,7 +153,7 @@ export default function ContactPage() {
                                                 <textarea rows={4} className="w-full px-4 py-4 rounded-xl bg-gray-50 border border-transparent focus:bg-white focus:border-blue-200 focus:ring-4 focus:ring-blue-50 transition-all outline-none font-medium text-[#212529] resize-none" placeholder="Tell us about your project goals..." />
                                             </div>
 
-                                            <button className="w-full btn-webfx btn-action py-5 text-lg shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 hover:-translate-y-1 transition-transform">
+                                            <button className="w-full btn-kalatram btn-action py-5 text-lg shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 hover:-translate-y-1 transition-transform">
                                                 Send Message <Send size={20} />
                                             </button>
                                         </form>

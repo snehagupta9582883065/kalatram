@@ -141,7 +141,7 @@ export default function AboutPage() {
                     <Reveal width="100%">
                         <h2 className="text-5xl font-black mb-8">Want to join the team?</h2>
                         <p className="text-xl text-gray-500 mb-12">We're always looking for exceptional talent.</p>
-                        <Link href="/careers" className="btn-webfx btn-action py-5 px-12 text-xl inline-flex">
+                        <Link href="/careers" className="btn-kalatram btn-action py-5 px-12 text-xl inline-flex">
                             View Open Positions
                         </Link>
                     </Reveal>
