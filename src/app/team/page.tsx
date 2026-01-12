@@ -120,7 +120,7 @@ export default function TeamPage() {
                                             {/* Editorial Name Overlay */}
                                             <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
                                                 <div className="overflow-hidden">
-                                                    <p className="text-[#f68d2e] font-bold text-xs md:text-sm uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                                    <p className="text-[#f68d2e] font-bold text-xs md:text-xl uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                                         {leader.role}
                                                     </p>
                                                 </div>
