@@ -30,10 +30,10 @@ export function Hero() {
                         </Reveal>
 
                         <Reveal delay={0.1}>
-                            <h1 className="text-4xl sm:text-5xl lg:text-[5.5rem] font-extrabold text-[#0a0a0a] leading-[1.1] lg:leading-[0.95] tracking-tight mb-6 lg:mb-8">
-                                Digital Success <br className="hidden lg:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-blue-400">
-                                    Simplified.
+                            <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                                Digital Success <br />
+                                <span className="text-[#004c8c]">
+                                     Simplified.
                                 </span>
                             </h1>
                         </Reveal>
