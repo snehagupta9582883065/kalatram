@@ -9,29 +9,29 @@ import Link from "next/link"
 const steps = [
     {
         icon: Target,
-        title: "01. Discovery & Strategy",
-        description: "We dive deep into your business metrics, audience, and goals. We don't guess; we audit, analyze, and architect a roadmap for revenue.",
+        title: "01. Product Discovery",
+        description: "We validate your idea before writing a single line of code. We identify your core audience, define the problem, and map out the MVP features.",
         bg: "bg-blue-50",
         color: "text-blue-600"
     },
     {
         icon: Lightbulb,
-        title: "02. Custom Solutions",
-        description: "No two businesses are alike. We build bespoke digital ecosystems—whether it's a high-performance web app or a complex SEO campaign.",
+        title: "02. Rapid Prototyping",
+        description: "See your vision come to life in days, not months. We build high-fidelity interactive prototypes to test user flows and gather early feedback.",
         bg: "bg-purple-50",
         color: "text-purple-600"
     },
     {
         icon: Zap,
-        title: "03. Agile Execution",
-        description: "Our rapid deployment teams bring the strategy to life. We work in sprints, ensuring continuous momentum and clear communication.",
+        title: "03. Agile Development",
+        description: "We build fast and iterate often. Utilizing modern tech stacks (Next.js, React Native), we ship scalable code that's ready for high growth.",
         bg: "bg-orange-50",
         color: "text-orange-600"
     },
     {
-        icon: BarChart3,
-        title: "04. Data Optimization",
-        description: "Launch is just the start. We obsessively track KPIs, A/B test creatives, and refine funnels to maximize your ROI.",
+        icon: Rocket, // Changed icon for Launch focus
+        title: "04. Launch & Growth",
+        description: "Go live with confidence. We handle the launch strategy and immediately transition into data-driven growth hacking to acquire users.",
         bg: "bg-emerald-50",
         color: "text-emerald-600"
     }
@@ -47,22 +47,22 @@ export default function OurApproachPage() {
                 <div className="container max-w-[1400px] mx-auto text-center">
                     <Reveal width="100%">
                         <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blue-50 border border-blue-100/50 text-blue-700 text-[11px] font-extrabold uppercase tracking-widest mb-6">
-                            Methodology
+                            Startup Methodology
                         </div>
                     </Reveal>
 
                     <Reveal width="100%" delay={0.1}>
-                        <h1 className="text-5xl md:text-7xl font-extrabold text-[#212529] mb-8 tracking-tight">
-                            The Science Behind <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">
-                                Your Growth
+                        <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                            From Idea to  <br />
+                            <span className="text-[#004c8c]">
+                                Market Leader.
                             </span>
                         </h1>
                     </Reveal>
 
                     <Reveal width="100%" delay={0.2}>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
-                            We bridge the gap between creative vision and technical execution. Our 4-step process is designed to eliminate risk and guarantee results.
+                            We don't just build software; we build businesses. Our agile process is designed for speed, flexibility, and finding product-market fit fast.
                         </p>
                     </Reveal>
                 </div>
@@ -94,18 +94,18 @@ export default function OurApproachPage() {
                 <div className="container max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <Reveal width="100%">
                         <h2 className="text-4xl md:text-5xl font-black text-[#212529] mb-6 leading-tight">
-                            Creativity wins attention. <br />
-                            <span className="text-[#004c8c]">Data wins revenue.</span>
+                            Build fast. <br />
+                            <span className="text-[#004c8c]">Learn faster.</span>
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Most agencies rely on gut feeling. We rely on hard numbers. By combining world-class design with rigorous data analysis, we build digital products that look beautiful and perform exceptionally.
+                            Startups die because they build things nobody wants. We focus on validating assumptions early. By combining rapid development with user-centric design, we ensure you're building the right product for the right market.
                         </p>
                         <ul className="space-y-4 mb-10">
                             {[
-                                "Proprietary ROI Tracking Dashboard",
-                                "Weekly Strategy Sprints",
-                                "Full-Funnel Attribution",
-                                "Dedicated Growth Squads"
+                                "Lean Startup Principles",
+                                "Weekly Development Sprints",
+                                "Direct Founder-to-Engineer Access",
+                                "Scalable Architecture Day One"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 font-bold text-[#212529]">
                                     <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
@@ -116,7 +116,7 @@ export default function OurApproachPage() {
                             ))}
                         </ul>
                         <Link href="/portfolio" className="btn-webfx btn-action py-4 px-8 inline-flex">
-                            See Our Results
+                            See What We Build
                         </Link>
                     </Reveal>
 
@@ -128,18 +128,18 @@ export default function OurApproachPage() {
 
                             <div className="relative z-10">
                                 <Rocket size={48} className="mb-6 opacity-80" />
-                                <div className="text-6xl font-black mb-2">300%</div>
-                                <div className="text-xl font-medium opacity-80">Average ROI for Clients</div>
+                                <div className="text-6xl font-black mb-2">10x</div>
+                                <div className="text-xl font-medium opacity-80">Faster Time-to-Market</div>
                             </div>
 
                             <div className="relative z-10 grid grid-cols-2 gap-4 mt-12 bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
                                 <div>
-                                    <div className="text-3xl font-bold">12k+</div>
-                                    <div className="text-sm opacity-70">Campaigns</div>
+                                    <div className="text-3xl font-bold">2-4</div>
+                                    <div className="text-sm opacity-70">Weeks to MVP</div>
                                 </div>
                                 <div>
-                                    <div className="text-3xl font-bold">$1B+</div>
-                                    <div className="text-sm opacity-70">Revenue</div>
+                                    <div className="text-3xl font-bold">100%</div>
+                                    <div className="text-sm opacity-70">Code Ownership</div>
                                 </div>
                             </div>
                         </div>
@@ -152,10 +152,10 @@ export default function OurApproachPage() {
                 <div className="container max-w-4xl mx-auto px-6 text-center">
                     <Reveal width="100%">
                         <h2 className="text-4xl md:text-5xl font-black text-[#212529] mb-8">
-                            Ready to start the process?
+                            Got an idea? Let's validate it.
                         </h2>
                         <Link href="/contact" className="btn-webfx btn-action py-5 px-12 text-xl inline-flex shadow-xl hover:-translate-y-1 transition-transform">
-                            Schedule Discovery Call
+                            Book a Strategy Session
                         </Link>
                     </Reveal>
                 </div>

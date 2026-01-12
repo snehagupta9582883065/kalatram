@@ -4,24 +4,26 @@ import Link from "next/link"
 import { Cpu, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 const footerLinks = {
-    Solutions: [
-        { name: "SEO Services", href: "/seo" },
-        { name: "PPC Management", href: "/ppc" },
-        { name: "Web Design", href: "/design" },
-        { name: "Social Media", href: "/social" },
-        { name: "Content Marketing", href: "/content" },
+    Services: [
+        { name: "Web Development", href: "/development/web-development" },
+        { name: "App Development", href: "/development/app-development" },
+        { name: "Digital Marketing", href: "/marketing/digital-marketing" },
+        { name: "SEO Services", href: "/marketing/seo" },
+        { name: "Graphic Design", href: "/design/graphic-design" },
+        { name: "Brand Identity", href: "/design/branding" },
     ],
     Company: [
         { name: "About Us", href: "/about" },
+        { name: "Our Team", href: "/team" },
+        { name: "Our Approach", href: "/our-approach" },
         { name: "Careers", href: "/careers" },
-        { name: "Community Impact", href: "/community" },
         { name: "Contact", href: "/contact" },
     ],
     Resources: [
-        { name: "Knowledge Base", href: "/blog" },
-        { name: "Case Studies", href: "/portfolio" },
-        { name: "Marketing Guides", href: "/guides" },
-        { name: "Tools", href: "/tools" },
+        { name: "Portfolio", href: "/portfolio" },
+        { name: "Blog", href: "/blog" },
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Terms of Service", href: "/terms" },
     ]
 }
 
@@ -76,9 +78,7 @@ export function Footer() {
                 <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
                     <p>© 2026 Kalatram. All rights reserved.</p>
                     <div className="flex gap-8">
-                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-                        <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+                        {/* Links are now in the main grid for better visibility */}
                     </div>
                 </div>
             </div>

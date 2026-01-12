@@ -25,22 +25,22 @@ export function Hero() {
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
                                 </span>
-                                #1 ROI-Focused Agency
+                                Your Growth Partner
                             </div>
                         </Reveal>
 
                         <Reveal delay={0.1}>
                             <h1 className="text-4xl sm:text-5xl lg:text-[5.5rem] font-extrabold text-[#0a0a0a] leading-[1.1] lg:leading-[0.95] tracking-tight mb-6 lg:mb-8">
-                                Revenue Growth <br className="hidden lg:block" />
+                                Digital Success <br className="hidden lg:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-blue-400">
-                                    Engineered.
+                                    Simplified.
                                 </span>
                             </h1>
                         </Reveal>
 
                         <Reveal delay={0.2}>
                             <p className="text-lg sm:text-xl text-gray-600 mb-8 lg:mb-12 leading-relaxed max-w-lg font-medium">
-                                We help mid-size businesses scale through data-driven SEO & PPC. Over <span className="font-bold text-gray-900 bg-blue-50 px-1 rounded">$10 billion</span> in verified client revenue.
+                                We turn complex challenges into simple, scalable digital solutions. From stunning designs to powerful code, we build exactly what your business needs to grow.
                             </p>
                         </Reveal>
 
@@ -54,22 +54,22 @@ export function Hero() {
                                     </div>
                                     <div className="h-4 w-[1px] bg-gray-300"></div>
                                     <span className="text-sm font-semibold text-gray-700">
-                                        <span className="font-bold text-gray-900">5.0</span> Rating (1,100+ Reviews)
+                                        <span className="font-bold text-gray-900">100%</span> Client Satisfaction
                                     </span>
                                 </div>
 
                                 <div className="flex flex-wrap gap-4 text-xs font-semibold text-gray-500">
                                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-gray-50 border border-gray-100">
                                         <TrendingUp className="w-3.5 h-3.5 text-blue-600" />
-                                        <span>Average 20% Growth</span>
+                                        <span>Results Driven</span>
                                     </div>
                                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-gray-50 border border-gray-100">
                                         <Users className="w-3.5 h-3.5 text-blue-600" />
-                                        <span>Dedicated Team</span>
+                                        <span>Expert Team</span>
                                     </div>
                                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-gray-50 border border-gray-100">
                                         <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-                                        <span>Verified Results</span>
+                                        <span>Quality Guaranteed</span>
                                     </div>
                                 </div>
                             </div>

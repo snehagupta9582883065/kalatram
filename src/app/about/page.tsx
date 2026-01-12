@@ -46,9 +46,11 @@ export default function AboutPage() {
                     </Reveal>
 
                     <Reveal width="100%" delay={0.1}>
-                        <h1 className="text-5xl md:text-8xl font-black text-[#212529] mb-10 tracking-tighter">
-                            We Engineer <br />
-                            <span className="text-[#004c8c]">Digital Success</span>
+                        <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                            We Engineer   <br />
+                            <span className="text-[#004c8c]">
+                                Digital Success
+                            </span>
                         </h1>
                     </Reveal>
 

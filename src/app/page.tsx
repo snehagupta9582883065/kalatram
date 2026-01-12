@@ -1,13 +1,17 @@
 "use client"
 
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Animations/Reveal";
 import { ArrowRight, Star, CheckCircle2, Search, BarChart3, Globe, Mail, Code2, Smartphone, Megaphone, Palette } from "lucide-react";
 import Link from "next/link";
+import { ProposalModal } from "@/components/ProposalModal";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -15,43 +19,38 @@ export default function Home() {
       <Hero />
 
       {/* Trust Bar */}
-      <section className="py-6 md:py-12 border-y border-gray-100 bg-gray-50">
+      {/* <section className="py-6 md:py-12 border-y border-gray-100 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-12 opacity-60">
-          <span className="text-lg md:text-xl font-black italic text-gray-400">FORTUNE 500</span>
-          <span className="text-lg md:text-xl font-black italic text-gray-400">COCA-COLA</span>
-          <span className="text-lg md:text-xl font-black italic text-gray-400">AMAZON</span>
-          <span className="text-lg md:text-xl font-black italic text-gray-400">MICROSOFT</span>
-          <span className="text-lg md:text-xl font-black italic text-gray-400">GOOGLE</span>
         </div>
-      </section>
+      </section> */}
 
       {/* Solutions Grid */}
-      <section className="py-12 md:py-32 px-6">
+      <section className="py-12 md:py-20 px-6 bg-[#f8faff]">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-10 md:mb-24">
             <Reveal width="100%">
               <h2 className="text-3xl md:text-5xl font-extrabold text-[#212529] mb-4 md:mb-6 leading-tight">
-                Digital Marketing Solutions that Drive Revenue
+                Complete Digital Solutions
               </h2>
             </Reveal>
             <Reveal delay={0.1} width="100%">
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover how our team of 500+ experts can help you achieve your business goals with data-driven strategies.
+                From stunning designs to powerful code and strategic marketing, we provide everything you need to scale your business.
               </p>
             </Reveal>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {[
-              { icon: Code2, title: "Web Development", desc: "Build high-performance, scalable websites tailored to your business needs." },
-              { icon: Smartphone, title: "App Development", desc: "Create seamless mobile experiences for iOS and Android platforms." },
-              { icon: Megaphone, title: "Digital Marketing", desc: "Drive growth with comprehensive strategies across all digital channels." },
-              { icon: Palette, title: "Graphic Designing", desc: "Captivate your audience with stunning visuals and brand identity design." },
-              { icon: Mail, title: "Email Marketing", desc: "Engage and convert your audience with personalized email campaigns and automation." },
-              { icon: Search, title: "SEO Services", desc: "Boost your visibility and rank higher on search engines with data-driven SEO." }
+              { icon: Code2, title: "Web Development", href: "/development/web-development", desc: "Fast, responsive, and custom-built websites that turn visitors into customers." },
+              { icon: Smartphone, title: "App Development", href: "/development/app-development", desc: "Top-tier mobile applications engineered for flawless user experiences." },
+              { icon: Megaphone, title: "Digital Marketing", href: "/marketing/digital-marketing", desc: "Data-driven strategies designed to reach your audience and boost revenue." },
+              { icon: Palette, title: "Graphic Designing", href: "/design/graphic-design", desc: "Eye-catching visuals and branding that make you stand out from the competition." },
+              { icon: Mail, title: "Email Marketing", href: "/marketing/email-marketing", desc: "Smart automation systems to nurture leads and drive repeat sales." },
+              { icon: Search, title: "SEO Services", href: "/marketing/seo", desc: "Proven techniques to rank #1 on Google and attract organic traffic." }
             ].map((service, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <div className="group relative bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden h-full">
+                <Link href={service.href} className="group relative block bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden h-full">
                   {/* Hover Gradient Border Effect */}
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
@@ -73,7 +72,7 @@ export default function Home() {
 
                   {/* Gentle background wash on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -85,14 +84,14 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl font-black leading-tight md:leading-[1.1] mb-6 md:mb-8">
-              Everything we do is focused on driving revenue.
+              Your Vision, Engineered for Velocity.
             </h2>
             <div className="space-y-4 md:space-y-6">
               {[
-                "Proprietary technology to track and grow ROI",
-                "500+ digital marketing experts on your team",
-                "Data-backed decisions, not guesses",
-                "Over 25 years of experience in the industry"
+                "Rapid deployment without technical debt",
+                "Design that captures investors and users alike",
+                "Marketing engines built for exponential growth",
+                "Deep ecosystem expertise across all digital frontiers"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4 text-base md:text-lg font-medium">
                   <CheckCircle2 className="text-[#f68d2e] shrink-0 w-5 h-5 md:w-6 md:h-6" />
@@ -101,27 +100,27 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 md:mt-12">
-              <Link href="/get-proposal" className="btn-webfx btn-action py-4 px-8 md:py-5 md:px-10 text-base md:text-lg w-full md:w-auto text-center inline-flex justify-center">
-                See Our Results <ArrowRight className="ml-3 w-5 h-5" />
-              </Link>
+              <button onClick={() => setIsModalOpen(true)} className="btn-webfx btn-action py-4 px-8 md:py-5 md:px-10 text-base md:text-lg w-full md:w-auto text-center inline-flex justify-center">
+                Start Your Transformation <ArrowRight className="ml-3 w-5 h-5" />
+              </button>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 md:gap-10">
             <div className="p-6 md:p-12 bg-white/10 rounded-xl backdrop-blur-sm border border-white/10 text-center">
-              <div className="text-3xl md:text-6xl font-black mb-2">1,027+</div>
-              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Projects Completed</p>
+              <div className="text-3xl md:text-6xl font-black mb-2">100%</div>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Commitment</p>
             </div>
             <div className="p-6 md:p-12 bg-white/10 rounded-xl backdrop-blur-sm border border-white/10 text-center">
-              <div className="text-3xl md:text-6xl font-black mb-2">24M+</div>
-              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Leads Tracked</p>
+              <div className="text-3xl md:text-6xl font-black mb-2">24/7</div>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Support</p>
             </div>
             <div className="p-6 md:p-12 bg-white/10 rounded-xl backdrop-blur-sm border border-white/10 text-center">
-              <div className="text-3xl md:text-6xl font-black mb-2">93%</div>
-              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Client Retention</p>
+              <div className="text-3xl md:text-6xl font-black mb-2">ROI</div>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Focused</p>
             </div>
             <div className="p-6 md:p-12 bg-white/10 rounded-xl backdrop-blur-sm border border-white/10 text-center">
-              <div className="text-3xl md:text-6xl font-black mb-2">500+</div>
-              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Experts On Staff</p>
+              <div className="text-3xl md:text-6xl font-black mb-2">Best</div>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#f68d2e]">Practices</p>
             </div>
           </div>
         </div>
@@ -135,21 +134,22 @@ export default function Home() {
             <span className="text-[#004c8c]">starting today?</span>
           </h2>
           <p className="text-lg md:text-2xl text-gray-500 mb-10 md:mb-16 font-medium">
-            Join the 1,000+ companies that have partnered with us for industry-leading digital marketing services.
+            Partner with us to build digital experiences that drive real, measurable growth for your business.
           </p>
-          <Link href="/get-proposal" className="btn-webfx btn-action py-4 px-8 md:py-6 md:px-16 text-lg md:text-2xl shadow-2xl w-full md:w-auto inline-flex justify-center items-center">
+          <button onClick={() => setIsModalOpen(true)} className="btn-webfx btn-action py-4 px-8 md:py-6 md:px-16 text-lg md:text-2xl shadow-2xl w-full md:w-auto inline-flex justify-center items-center">
             Get My Free Proposal <ArrowRight className="ml-4 w-5 h-5 md:w-8 md:h-8" />
-          </Link>
+          </button>
           <div className="mt-10 md:mt-16 flex items-center justify-center gap-3">
             {[1, 2, 3, 4, 5].map((s) => (
               <Star key={s} className="w-5 h-5 text-[#f68d2e] fill-[#f68d2e]" />
             ))}
-            <span className="text-base md:text-lg font-bold text-[#212529] ml-2">4.9/5 from 1,000+ reviews</span>
+            <span className="text-base md:text-lg font-bold text-[#212529] ml-2">Dedicated to your success</span>
           </div>
         </div>
       </section>
 
       <Footer />
+      <ProposalModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }

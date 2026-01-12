@@ -76,9 +76,9 @@ export default function ContactPage() {
                                     </span>
                                     Contact Us
                                 </div>
-                                <h1 className="text-5xl md:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[0.9]">
+                                <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
                                     Let's Growth <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004c8c] to-blue-500">
+                                    <span className="text-[#004c8c]">
                                         Together.
                                     </span>
                                 </h1>

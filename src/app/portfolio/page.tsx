@@ -7,26 +7,26 @@ import { ArrowRight, ExternalLink, Code2, Smartphone, Megaphone, Palette, Mail, 
 import Link from "next/link"
 import Image from "next/image"
 
-// Portfolio Data Structured by Service
+// Portfolio Data Structured for Startups
 const portfolioCategories = [
     {
         id: "web-dev",
         title: "Web Development",
-        description: "Custom, high-performance websites built for scale and conversion.",
+        description: "Modern, scalable websites and web apps built for growth.",
         icon: Code2,
         projects: [
             {
-                title: "FinTech Global Platform",
-                subtitle: "Corporate Banking Portal",
+                title: "SaaS Dashboard MVP",
+                subtitle: "Analytics Platform",
                 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-                tags: ["Next.js", "TypeScript", "Enterprise Security"],
+                tags: ["Next.js", "Tailwind", "Rapid Prototype"],
                 link: "#"
             },
             {
-                title: "Luxe E-Commerce",
-                subtitle: "Fashion Retail Experience",
+                title: "DTC Brand Launch",
+                subtitle: "E-Commerce Experience",
                 image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-                tags: ["Shopify Plus", "React", "3D Modeling"],
+                tags: ["Shopify", "Conversion Optimization", "Launch"],
                 link: "#"
             }
         ]
@@ -34,109 +34,87 @@ const portfolioCategories = [
     {
         id: "app-dev",
         title: "App Development",
-        description: "Native and cross-platform mobile applications for iOS and Android.",
+        description: "Turning ideas into functional mobile products.",
         icon: Smartphone,
         projects: [
             {
-                title: "HealthTrack Pro",
-                subtitle: "Fitness & Wellness App",
+                title: "Fitness Tracker V1",
+                subtitle: "Health & Wellness",
                 image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
-                tags: ["Flutter", "HealthKit", "Real-time Data"],
+                tags: ["Flutter", "Cross-Platform", "MVP"],
                 link: "#"
             },
             {
-                title: "RideShare Connect",
-                subtitle: "Transport Logistics App",
+                title: "On-Demand Delivery",
+                subtitle: "Logistics Prototype",
                 image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
-                tags: ["React Native", "Google Maps API", "Socket.io"],
+                tags: ["React Native", "Geolocation", "Beta Launch"],
                 link: "#"
             }
         ]
     },
     {
         id: "digital-marketing",
-        title: "Digital Marketing",
-        description: "Data-driven campaigns that drive leads and revenue growth.",
+        title: "Growth Marketing",
+        description: "Strategies to acquire first users and scale fast.",
         icon: Megaphone,
         projects: [
             {
-                title: "Global SaaS Launch",
-                subtitle: "PPC & Social Campaign",
+                title: "Seed Round Launch",
+                subtitle: "Go-To-Market Strategy",
                 image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=2076&auto=format&fit=crop",
-                tags: ["Google Ads", "LinkedIn Ads", "ROI +300%"],
+                tags: ["PPC", "User Acquisition", "Growth Hacking"],
                 link: "#"
             },
             {
-                title: "Retail Chain Expansion",
-                subtitle: "Social Media Strategy",
+                title: "Social Community Build",
+                subtitle: "Brand Awareness",
                 image: "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=2031&auto=format&fit=crop",
-                tags: ["Instagram Growth", "Influencer Marketing", "Brand Awareness"],
+                tags: ["Instagram", "Content", "Engagement"],
                 link: "#"
             }
         ]
     },
     {
         id: "graphic-design",
-        title: "Graphic Designing",
-        description: "Visual storytelling that builds powerful brand identities.",
+        title: "Brand Identity",
+        description: "Giving startups a world-class look from day one.",
         icon: Palette,
         projects: [
             {
-                title: "EcoEnergy Rebrand",
-                subtitle: "Corporate Identity System",
+                title: "Tech Startup Identity",
+                subtitle: "Visual Language",
                 image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop",
-                tags: ["Logo Design", "Brand Guidelines", "Stationery"],
+                tags: ["Logo", "Color System", "Pitch Deck"],
                 link: "#"
             },
             {
-                title: "TechConf 2025",
-                subtitle: "Event Branding & Assets",
+                title: "Product Launch Assets",
+                subtitle: "Marketing Collateral",
                 image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
-                tags: ["Print Design", "Digital Assets", "Merchandise"],
-                link: "#"
-            }
-        ]
-    },
-    {
-        id: "email-marketing",
-        title: "Email Marketing",
-        description: "Engaging email flows that nurture leads and retain customers.",
-        icon: Mail,
-        projects: [
-            {
-                title: "Welcome Series Automation",
-                subtitle: "E-commerce Retention",
-                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=2070&auto=format&fit=crop",
-                tags: ["Klaviyo", "Copywriting", "Design"],
-                link: "#"
-            },
-            {
-                title: "B2B Newsletter Growth",
-                subtitle: "Lead Nurturing",
-                image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=2274&auto=format&fit=crop",
-                tags: ["Substack", "Content Strategy", "High Open Rates"],
+                tags: ["Social Assets", "Banners", "Presentation"],
                 link: "#"
             }
         ]
     },
     {
         id: "seo",
-        title: "SEO Services",
-        description: "Dominating search results with technical and content SEO.",
+        title: "Search Visibility",
+        description: "Helping new brands get found online.",
         icon: Search,
         projects: [
             {
-                title: "Legal Firm Dominance",
-                subtitle: "Local SEO Campaign",
+                title: "Local Business Scale",
+                subtitle: "SEO Foundation",
                 image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop",
-                tags: ["Local Pack", "GMB Optimization", "Traffic +150%"],
+                tags: ["Local SEO", "Optimization", "Traffic Growth"],
                 link: "#"
             },
             {
-                title: "Medical Portal Growth",
-                subtitle: "Technical SEO Audit",
+                title: "Content Strategy",
+                subtitle: "Blog & Keywords",
                 image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop",
-                tags: ["Core Web Vitals", "Schema Markup", "Rank #1"],
+                tags: ["Content Plan", "Writing", "Ranking"],
                 link: "#"
             }
         ]
@@ -157,22 +135,22 @@ export default function PortfolioPage() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
                             </span>
-                            Our Work
+                            Selected Work
                         </div>
                     </Reveal>
 
                     <Reveal width="100%" delay={0.1}>
-                        <h1 className="text-5xl md:text-7xl font-extrabold text-[#212529] mb-8 tracking-tight">
-                            Success Stories & <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">
-                                Digital Excellence
+                        <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                            Crafting Digital <br />
+                            <span className="text-[#004c8c]">
+                                Products.
                             </span>
                         </h1>
                     </Reveal>
 
                     <Reveal width="100%" delay={0.2}>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
-                            Explore how we've helped ambitous brands scale through technology, design, and data-driven marketing.
+                            From initial concept to launch, we partner with visionaries to build modern products and scalable brands.
                         </p>
                     </Reveal>
                 </div>
@@ -255,9 +233,9 @@ export default function PortfolioPage() {
                 <div className="container max-w-4xl mx-auto px-6 text-center">
                     <Reveal width="100%">
                         <h2 className="text-4xl md:text-5xl font-black text-[#212529] mb-8">
-                            Ready to build your success story?
+                            Let's build something amazing.
                         </h2>
-                        <Link href="/get-proposal" className="btn-kalatram btn-action py-5 px-12 text-xl inline-flex shadow-xl hover:-translate-y-1 transition-transform">
+                        <Link href="/contact" className="btn-webfx btn-action py-5 px-12 text-xl inline-flex shadow-xl hover:-translate-y-1 transition-transform">
                             Get Your Proposal
                         </Link>
                     </Reveal>

@@ -79,7 +79,7 @@ export default function TeamPage() {
                     </Reveal>
 
                     <Reveal width="100%" delay={0.1}>
-                        <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                        <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
                             Visionaries Behind <br />
                             <span className="text-[#004c8c]">
                                 The Revolution

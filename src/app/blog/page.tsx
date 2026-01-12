@@ -8,55 +8,55 @@ import Link from "next/link"
 
 const articles = [
     {
-        title: "The Future of SEO in 2026: AI & Search Generative Experience",
-        excerpt: "How Google's SGE is changing the landscape for organic traffic and what brands need to do to stay visible.",
-        category: "SEO",
-        author: "Sarah Jenkins",
+        title: "From Seed to Series A: The Tech Stack You Need",
+        excerpt: "Don't over-engineer early. Here is the lean tech stack that scales with your user base without burning your runway.",
+        category: "Scaling",
+        author: "Tech Team",
         date: "Oct 12, 2025",
         image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "Maximizing ROI with Programmatic Advertising",
-        excerpt: "A deep dive into real-time bidding strategies that lower CPA and increase conversions for enterprise brands.",
-        category: "PPC",
-        author: "Mike Ross",
+        title: "Growth Hacking 101: First 1000 Users",
+        excerpt: "Actionable strategies to acquire your first qualified users through organic channels and clever viral loops.",
+        category: "Growth",
+        author: "Marketing Squad",
         date: "Sep 28, 2025",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "UI/UX Trends Determining User Behavior",
-        excerpt: "Why micro-interactions and bento-box layouts are dominating modern web design and improving retention.",
-        category: "Design",
-        author: "Elena Fisher",
+        title: "MVP Design: Features vs. Time-to-Market",
+        excerpt: "How to ruthlessly prioritize features for your V1 launch. If you're not embarrassed by your first release, you launched too late.",
+        category: "Product",
+        author: "Design Lead",
         date: "Sep 15, 2025",
         image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "E-commerce Email Flows You Must Automate",
-        excerpt: "The 5 essential Klaviyo flows that generate 40% of email revenue on autopilot.",
-        category: "Email",
-        author: "David Chen",
+        title: "Automating Operations for Small Teams",
+        excerpt: "Use No-Code tools and AI to run a lean operation. Do more with less human capital.",
+        category: "Operations",
+        author: "Ops Manager",
         date: "Aug 30, 2025",
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=2070&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "Scaling React Applications: Best Practices",
-        excerpt: "Technical guide to optimizing Next.js performance for high-traffic corporate portals.",
-        category: "Development",
-        author: "James Miller",
+        title: "Next.js vs. React: Choosing for Performance",
+        excerpt: "Why we choose Next.js for high-performance startup applications and SEO benefits right out of the box.",
+        category: "Engineering",
+        author: "Head of Eng",
         date: "Aug 12, 2025",
         image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "Brand Storytelling in the Digital Age",
-        excerpt: "How to craft a narrative that resonates across social channels and builds lasting loyalty.",
-        category: "Branding",
-        author: "Jessica Pearson",
+        title: "Pitch Deck Storytelling: Raising Your Round",
+        excerpt: "How to craft a narrative that resonates with VCs. It's not just about numbers; it's about the vision.",
+        category: "Fundraising",
+        author: "Founder's Desk",
         date: "Jul 22, 2025",
         image: "https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=2064&auto=format&fit=crop",
         link: "#"
@@ -73,14 +73,16 @@ export default function BlogPage() {
                 <div className="container max-w-[1400px] mx-auto text-center">
                     <Reveal width="100%">
                         <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 text-[11px] font-extrabold uppercase tracking-widest mb-6">
-                            Insights & News
+                            Startup Insights
                         </div>
                     </Reveal>
 
                     <Reveal width="100%" delay={0.1}>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-[#212529] mb-6 tracking-tight">
-                            Digital Intelligence <br />
-                            <span className="text-[#004c8c]">For Growing Brands</span>
+                        <h1 className="text-4xl md:text-4xl lg:text-7xl font-black text-[#212529] mb-8 tracking-tighter leading-[1] max-w-5xl mx-auto">
+                            Tactical Advice for  <br />
+                            <span className="text-[#004c8c]">
+                                Building & Scaling
+                            </span>
                         </h1>
                     </Reveal>
                 </div>
@@ -100,14 +102,14 @@ export default function BlogPage() {
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-20">
                                     <span className="bg-[#f68d2e] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 inline-block">
-                                        Featured
+                                        Must Read
                                     </span>
                                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 max-w-4xl leading-tight">
-                                        Data Privacy in 2026: Navigating the New Compliance Landscape
+                                        The Founder's Guide to Finding Product-Market Fit in 2026
                                     </h2>
                                     <div className="flex items-center gap-6 text-white/80 font-medium">
                                         <div className="flex items-center gap-2">
-                                            <User size={16} /> Tabitha Walker
+                                            <User size={16} /> Ishu Pachouri
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Calendar size={16} /> Nov 14, 2025
@@ -159,8 +161,8 @@ export default function BlogPage() {
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -mr-20 -mt-20"></div>
 
                         <div className="relative z-10 max-w-2xl mx-auto">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join 15,000+ Marketers</h2>
-                            <p className="text-white/80 mb-10 text-lg">Get the latest digital marketing trends and strategies delivered straight to your inbox weekly.</p>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join 5,000+ Founders</h2>
+                            <p className="text-white/80 mb-10 text-lg">Get weekly insights on building, launching, and scaling your startup.</p>
 
                             <form className="flex flex-col md:flex-row gap-4">
                                 <input
