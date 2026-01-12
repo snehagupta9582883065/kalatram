@@ -1,26 +1,126 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #212529;
+    --primary: #004c8c;
+    /* WebFX Blue */
+    --primary-glow: rgba(0, 76, 140, 0.1);
+    --secondary: #f8f9fa;
+    /* Light Section Grey */
+    --accent: #f68d2e;
+    /* WebFX Orange CTA */
+    --accent-hover: #e37b21;
+    --border: #dee2e6;
+  }
+
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans antialiased selection:bg-primary/20;
+    min-height: 100vh;
+  }
+
+  /* Professional Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Professional Structure */
+.section-grey {
+  background-color: var(--secondary);
+}
+
+@layer components {
+
+  /* Professional Borders - Replaces Glass */
+  .pro-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .pro-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-webfx {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-webfx:hover {
+    background-color: #003663;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-action {
+    background-color: var(--accent);
+  }
+
+  .btn-action:hover {
+    background-color: var(--accent-hover);
+  }
+
+  .text-blue {
+    color: var(--primary);
+  }
+
+  .bg-blue {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  /* Utility for headers */
+  .heading-bold {
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+}
+
+.page-container {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
 }
