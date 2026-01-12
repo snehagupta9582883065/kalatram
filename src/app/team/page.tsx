@@ -41,23 +41,24 @@ function TiltCard({ children, className }: { children: React.ReactNode, classNam
 // Data
 const leaders = [
     {
-        name: "Mr. Ishu Pachauri",
+        name: "Mr. Ankit Pachauri",
         role: "Founder & CEO",
+        bio: "With a keen eye for operational excellence and technological advancement, Ankit Pachauri oversees the execution of our projects. He ensures quality, efficiency, and client satisfaction at every touchpoint.",
+        expertise: ["Operational Excellence", "Product Execution", "Client Success"],
+        quote: "Excellence is a habit, not an act. We strive for perfection in every line of code and every pixel.",
+        image: "/teams/ankit.jpeg", // Using user provided path
+        social: { linkedin: "#", twitter: "#", email: "mailto:ankit@kalatram.com" }
+    },
+    {
+        name: "Mr. Ishu Pachauri",
+        role: "Co-Founder",
         bio: "A visionary leader with a passion for innovation and digital transformation. Mr. Ishu Pachauri drives the strategic direction of Kalatram, ensuring we stay ahead of the curve in delivering cutting-edge solutions to our global clientele.",
         expertise: ["Strategic Vision", "Global Scalability", "Tech Innovation"],
         quote: "Innovation is not just about technology; it's about empowering people to achieve the extraordinary.",
         image: "/teams/arpit.jpeg", // Using user provided path
         social: { linkedin: "#", twitter: "#", email: "mailto:ishu@kalatram.com" }
     },
-    {
-        name: "Mr. Ankit Pachauri",
-        role: "Co-Founder",
-        bio: "With a keen eye for operational excellence and technological advancement, Ankit Pachauri oversees the execution of our projects. He ensures quality, efficiency, and client satisfaction at every touchpoint.",
-        expertise: ["Operational Excellence", "Product Execution", "Client Success"],
-        quote: "Excellence is a habit, not an act. We strive for perfection in every line of code and every pixel.",
-        image: "/teams/ankit.jpeg", // Using user provided path
-        social: { linkedin: "#", twitter: "#", email: "mailto:ankit@kalatram.com" }
-    }
+
 ]
 
 export default function TeamPage() {
