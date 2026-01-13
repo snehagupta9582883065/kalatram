@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { motion } from "framer-motion"
-import { Linkedin, Twitter, Mail, ChevronRight } from "lucide-react"
+import { Linkedin, Twitter, Mail, ChevronRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { Reveal } from "@/components/Animations/Reveal"
 
@@ -38,26 +38,26 @@ function LeaderRow({ leader, index }: { leader: typeof leaders[0], index: number
             viewport={{ once: true }}
             className="group py-12 border-b border-gray-100 hover:bg-gray-50/50 transition-colors duration-300"
         >
-            <div className="container max-w-5xl mx-auto px-6 flex flex-col md:flex-row gap-8 items-start md:items-center">
+            <div className="container max-w-4xl mx-auto px-6 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
 
-                {/* Visual - Thumbnail */}
+                {/* Visual - Fixed Dimension Portrait - ALWAYS CONSISTENT */}
                 <div className="shrink-0">
-                    <div className="w-20 h-20 rounded-2xl overflow-hidden">
+                    <div className="w-40 h-56 md:w-48 md:h-64 rounded-2xl overflow-hidden bg-white shadow-sm ring-1 ring-gray-100 group-hover:ring-[#004c8c] transition-all duration-300">
                         <img
                             src={leader.image}
                             alt={leader.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-top"
                         />
                     </div>
                 </div>
 
                 {/* Content - Main Information */}
-                <div className="flex-1 min-w-0">
-                    <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-3">
+                <div className="flex-1 min-w-0 flex flex-col justify-center py-2 items-center md:items-start">
+                    <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-3 items-center md:items-start">
                         <h3 className="text-2xl font-bold text-[#212529] group-hover:text-[#004c8c] transition-colors">
                             {leader.name}
                         </h3>
-                        <span className="text-[#f68d2e] font-medium text-sm tracking-wide uppercase">
+                        <span className="text-[#f68d2e] font-medium text-xs tracking-widest uppercase bg-orange-50 px-2 py-1 rounded-md">
                             {leader.role}
                         </span>
                     </div>
@@ -67,9 +67,9 @@ function LeaderRow({ leader, index }: { leader: typeof leaders[0], index: number
                     </p>
 
                     {/* Expertise Pills */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mt-auto justify-center md:justify-start">
                         {leader.expertise.map(skill => (
-                            <span key={skill} className="text-[10px] uppercase font-bold tracking-wider text-gray-400 border border-gray-200 rounded px-2 py-1">
+                            <span key={skill} className="text-[10px] uppercase font-bold tracking-wider text-gray-400 border border-gray-200 rounded px-2 py-1 bg-white">
                                 {skill}
                             </span>
                         ))}
@@ -77,7 +77,7 @@ function LeaderRow({ leader, index }: { leader: typeof leaders[0], index: number
                 </div>
 
                 {/* Action / Socials */}
-                <div className="shrink-0 flex items-center gap-4 self-start md:self-center pt-2 md:pt-0">
+                <div className="shrink-0 flex items-center gap-4 self-center md:self-center pt-2 md:pt-0">
                     <div className="flex gap-3">
                         {Object.entries(leader.social).map(([platform, link]) => (
                             <Link
@@ -110,7 +110,7 @@ export default function TeamPage() {
                     <Reveal width="100%">
                         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white border border-gray-100 shadow-sm text-[#004c8c] text-xs font-bold uppercase tracking-widest mb-10 hover:shadow-md transition-shadow cursor-default group">
                             <div className="w-2 h-2 rounded-full bg-[#f68d2e] group-hover:scale-125 transition-transform" />
-                           People Behind the Strategy
+                            People Behind the Strategy
                         </div>
                     </Reveal>
 
@@ -122,7 +122,7 @@ export default function TeamPage() {
 
                     <Reveal width="100%" delay={0.2}>
                         <p className="text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-medium">
-                           The minds steering Kalatram forward.
+                            The minds steering Kalatram forward.
                         </p>
                     </Reveal>
                 </div>
@@ -135,16 +135,41 @@ export default function TeamPage() {
                 ))}
             </section>
 
-            {/* --- Footer CTA --- */}
-            <section className="bg-[#004c8c] py-12 px-6">
-                <div className="container max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-                    <div>
-                        <h2 className="text-xl font-bold">Join the team</h2>
-                        <p className="text-blue-200 text-sm">We are always hiring exceptional people.</p>
-                    </div>
-                    <Link href="/contact" className="px-6 py-3 bg-white text-[#004c8c] text-sm font-bold rounded hover:bg-gray-100 transition-colors">
-                        View Careers
-                    </Link>
+            {/* --- Premium Footer CTA --- */}
+            <section className="py-24 px-6 relative overflow-hidden bg-white">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-[100px] pointer-events-none -z-10" />
+
+                <div className="container max-w-4xl mx-auto text-center relative z-10">
+                    <Reveal width="100%">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-[#004c8c] text-xs font-bold uppercase tracking-widest mb-8 cursor-default">
+                            <Sparkles size={14} className="fill-[#004c8c]" />
+                            We are hiring
+                        </div>
+                    </Reveal>
+
+                    <Reveal width="100%" delay={0.1}>
+                        <h2 className="text-4xl md:text-6xl font-black text-[#212529] mb-8 tracking-tight leading-tight">
+                            Ready to make an <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004c8c] to-[#0066cc]">Impact?</span>
+                        </h2>
+                    </Reveal>
+
+                    <Reveal width="100%" delay={0.2}>
+                        <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                            Join a team of visionaries, creators, and problem solvers. We are always looking for exceptional talent to help us build the future.
+                        </p>
+                    </Reveal>
+
+                    <Reveal width="100%" delay={0.3}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link href="/careers" className="w-full sm:w-auto px-8 py-4 bg-[#004c8c] text-white font-bold rounded-lg hover:bg-[#003a6b] transition-all shadow-lg hover:shadow-blue-900/20 hover:-translate-y-1 flex items-center justify-center gap-2">
+                                Explorer Careers <ChevronRight size={18} />
+                            </Link>
+                            <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-white text-[#212529] font-bold rounded-lg border border-gray-200 hover:bg-gray-50 transition-all hover:-translate-y-1 flex items-center justify-center">
+                                Contact Us
+                            </Link>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
 
