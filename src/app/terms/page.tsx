@@ -21,7 +21,7 @@ export default function TermsOfService() {
                     <Reveal delay={0.1} width="100%">
                         <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-[#212529] prose-a:text-blue-600 hover:prose-a:text-blue-700 transition-colors">
                             <p className="lead text-xl text-gray-600 mb-12 font-medium">
-                                Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the Kalatram website. By accessing or using our Service, you agree to be bound by these Terms.
+                                Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the Sarpyx website. By accessing or using our Service, you agree to be bound by these Terms.
                             </p>
 
                             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-12">
@@ -33,27 +33,27 @@ export default function TermsOfService() {
 
                             <h3>1. Intellectual Property</h3>
                             <p>
-                                The Service and its original content, features, and functionality are and will remain the exclusive property of Kalatram and its licensors. The Service is protected by copyright, trademark, and other laws of both the India and foreign countries.
+                                The Service and its original content, features, and functionality are and will remain the exclusive property of Sarpyx and its licensors. The Service is protected by copyright, trademark, and other laws of both the India and foreign countries.
                             </p>
 
                             <h3>2. Use License</h3>
                             <p>
-                                Permission is granted to temporarily download one copy of the materials (information or software) on Kalatram's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                                Permission is granted to temporarily download one copy of the materials (information or software) on Sarpyx's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
                             </p>
                             <ul>
                                 <li>modify or copy the materials;</li>
                                 <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                                <li>attempt to decompile or reverse engineer any software contained on Kalatram's website;</li>
+                                <li>attempt to decompile or reverse engineer any software contained on Sarpyx's website;</li>
                             </ul>
 
                             <h3>3. Links To Other Web Sites</h3>
                             <p>
-                                Our Service may contain links to third-party web sites or services that are not owned or controlled by Kalatram. Kalatram has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party web sites or services.
+                                Our Service may contain links to third-party web sites or services that are not owned or controlled by Sarpyx. Sarpyx has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party web sites or services.
                             </p>
 
                             <h3>4. Limitation of Liability</h3>
                             <p>
-                                In no event shall Kalatram, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.
+                                In no event shall Sarpyx, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.
                             </p>
 
                             <h3>5. Governing Law</h3>

@@ -235,7 +235,7 @@ export default function PortfolioPage() {
                         <h2 className="text-4xl md:text-5xl font-black text-[#212529] mb-8">
                             Let's build something amazing.
                         </h2>
-                        <Link href="/contact" className="btn-webfx btn-action py-5 px-12 text-xl inline-flex shadow-xl hover:-translate-y-1 transition-transform">
+                        <Link href="/contact" className="btn-sarpyx btn-action py-5 px-12 text-lg inline-flex shadow-xl hover:-translate-y-1 transition-transform">
                             Get Your Proposal
                         </Link>
                     </Reveal>

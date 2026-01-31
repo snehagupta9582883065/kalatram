@@ -41,7 +41,7 @@ export default function AboutPage() {
                 <div className="container max-w-[1400px] mx-auto text-center">
                     <Reveal width="100%">
                         <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blue-50 border border-blue-100/50 text-blue-700 text-[11px] font-extrabold uppercase tracking-widest mb-6">
-                            About Kalatram
+                            About Sarpyx
                         </div>
                     </Reveal>
 
@@ -143,7 +143,7 @@ export default function AboutPage() {
                     <Reveal width="100%">
                         <h2 className="text-5xl font-black mb-8">Want to join the team?</h2>
                         <p className="text-xl text-gray-500 mb-12">We're always looking for exceptional talent.</p>
-                        <Link href="/careers" className="btn-kalatram btn-action py-5 px-12 text-xl inline-flex">
+                        <Link href="/careers" className="btn-sarpyx btn-action py-5 px-12 text-xl inline-flex">
                             View Open Positions
                         </Link>
                     </Reveal>

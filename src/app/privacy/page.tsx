@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
                     <Reveal delay={0.1} width="100%">
                         <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-[#212529] prose-a:text-blue-600 hover:prose-a:text-blue-700 transition-colors">
                             <p className="lead text-xl text-gray-600 mb-12 font-medium">
-                                At Kalatram, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
+                                At Sarpyx, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
                             </p>
 
                             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-12">
@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
                                 If you have questions or comments about this policy, you may email us or contact us by post at:
                             </p>
                             <address className="not-italic bg-gray-50 p-6 rounded-xl border border-gray-100 mt-6">
-                                <strong>Kalatram</strong><br />
+                                <strong>Sarpyx</strong><br />
                                 Jaypee Aman, Noida Sector 151<br />
                                 Noida<br />
                                 <a href="mailto:ishupachouri817@gmail.com" className="text-blue-600 hover:underline">ishupachouri817@gmail.com</a>

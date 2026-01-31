@@ -80,12 +80,11 @@ export function Navbar() {
                 )}>
                     <nav className="max-w-[1400px] mx-auto flex items-center justify-between">
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="w-10 h-10 bg-[#004c8c] flex items-center justify-center rounded-sm">
-                                <Cpu className="text-white w-6 h-6" />
-                            </div>
-                            <span className="text-3xl font-black tracking-tight text-[#004c8c] uppercase">
-                                Kalatram
-                            </span>
+                            <img
+                                src="/sarpyx-logo.png"
+                                alt="Sarpyx Digital Solutions"
+                                className="h-12 w-auto object-contain"
+                            />
                         </Link>
 
                         {/* Desktop Links */}
@@ -113,7 +112,7 @@ export function Navbar() {
                         <div className="flex items-center gap-6">
                             <button
                                 onClick={() => setIsModalOpen(true)}
-                                className="hidden lg:block btn-kalatram btn-action px-8"
+                                className="hidden lg:block btn-sarpyx btn-action px-8"
                             >
                                 Get My Free Proposal
                             </button>
@@ -231,7 +230,7 @@ export function Navbar() {
                                         setIsMobileMenuOpen(false)
                                         setIsModalOpen(true)
                                     }}
-                                    className="btn-kalatram btn-action w-full py-4 mt-4"
+                                    className="btn-sarpyx btn-action w-full py-4 mt-4"
                                 >
                                     Get My Free Proposal
                                 </button>

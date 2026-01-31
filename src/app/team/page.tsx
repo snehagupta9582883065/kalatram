@@ -16,16 +16,16 @@ const leaders = [
         expertise: ["Operational Excellence", "Product Execution", "Client Success"],
         quote: "Excellence is a habit, not an act.",
         image: "/teams/ankit.jpeg",
-        social: { linkedin: "#", twitter: "#", email: "mailto:ankit@kalatram.com" }
+        social: { linkedin: "#", twitter: "#", email: "mailto:ankit@sarpyx.com" }
     },
     {
         name: "Mr. Ishu Pachauri",
         role: "Co-Founder",
-        bio: "A visionary leader with a passion for innovation and digital transformation. Mr. Ishu Pachauri drives the strategic direction of Kalatram, ensuring we stay ahead of the curve. He combines deep technical knowledge with global market insights to steer the company towards sustainable growth.",
+        bio: "A visionary leader with a passion for innovation and digital transformation. Mr. Ishu Pachauri drives the strategic direction of Sarpyx, ensuring we stay ahead of the curve. He combines deep technical knowledge with global market insights to steer the company towards sustainable growth.",
         expertise: ["Strategic Vision", "Global Scalability", "Tech Innovation"],
         quote: "Innovation is about empowering people.",
         image: "/teams/arpit.jpeg",
-        social: { linkedin: "#", twitter: "#", email: "mailto:ishu@kalatram.com" }
+        social: { linkedin: "#", twitter: "#", email: "mailto:ishu@sarpyx.com" }
     },
 ]
 
@@ -122,7 +122,7 @@ export default function TeamPage() {
 
                     <Reveal width="100%" delay={0.2}>
                         <p className="text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-medium">
-                            The minds steering Kalatram forward.
+                            The minds steering Sarpyx forward.
                         </p>
                     </Reveal>
                 </div>

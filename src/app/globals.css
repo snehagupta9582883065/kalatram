@@ -11,9 +11,9 @@
     --primary-glow: rgba(0, 76, 140, 0.1);
     --secondary: #f8f9fa;
     /* Light Section Grey */
-    --accent: #f68d2e;
-    /* WebFX Orange CTA */
-    --accent-hover: #e37b21;
+    --accent: #00b5ad;
+    /* Sarpyx Teal */
+    --accent-hover: #008c85;
     --border: #dee2e6;
   }
 
@@ -73,7 +73,7 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
-  .btn-kalatram {
+  .btn-sarpyx {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +90,7 @@
     cursor: pointer;
   }
 
-  .btn-kalatram:hover {
+  .btn-sarpyx:hover {
     background-color: #003663;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }

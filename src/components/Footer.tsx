@@ -36,12 +36,11 @@ export function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-4 space-y-8">
                         <Link href="/" className="flex items-center gap-2 group">
-                            <div className="w-10 h-10 bg-[#004c8c] flex items-center justify-center rounded-sm">
-                                <Cpu className="text-white w-6 h-6" />
-                            </div>
-                            <span className="text-2xl font-black tracking-tight text-white uppercase">
-                                Kalatram
-                            </span>
+                            <img
+                                src="/sarpyx-logo.png"
+                                alt="Sarpyx Digital Solutions"
+                                className="h-12 w-auto object-contain"
+                            />
                         </Link>
                         <p className="text-gray-400 leading-relaxed max-w-sm">
                             Driving revenue and business growth through data-driven digital marketing solutions. Partner with a team that cares about your results.
@@ -76,7 +75,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-                    <p>© 2026 Kalatram. All rights reserved.</p>
+                    <p>© 2026 Sarpyx Digital Solutions. All rights reserved.</p>
                     <div className="flex gap-8">
                         {/* Links are now in the main grid for better visibility */}
                     </div>

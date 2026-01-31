@@ -100,7 +100,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 md:mt-12">
-              <button onClick={() => setIsModalOpen(true)} className="btn-webfx btn-action py-4 px-8 md:py-5 md:px-10 text-base md:text-lg w-full md:w-auto text-center inline-flex justify-center">
+              <button onClick={() => setIsModalOpen(true)} className="btn-sarpyx btn-action py-4 px-8 md:py-5 md:px-10 text-base md:text-lg w-full md:w-auto text-center inline-flex justify-center">
                 Start Your Transformation <ArrowRight className="ml-3 w-5 h-5" />
               </button>
             </div>
@@ -136,7 +136,7 @@ export default function Home() {
           <p className="text-lg md:text-2xl text-gray-500 mb-10 md:mb-16 font-medium">
             Partner with us to build digital experiences that drive real, measurable growth for your business.
           </p>
-          <button onClick={() => setIsModalOpen(true)} className="btn-webfx btn-action py-4 px-8 md:py-6 md:px-16 text-lg md:text-2xl shadow-2xl w-full md:w-auto inline-flex justify-center items-center">
+          <button onClick={() => setIsModalOpen(true)} className="btn-sarpyx btn-action py-4 px-8 md:py-6 md:px-16 text-lg md:text-2xl shadow-2xl w-full md:w-auto inline-flex justify-center items-center">
             Get My Free Proposal <ArrowRight className="ml-4 w-5 h-5 md:w-8 md:h-8" />
           </button>
           <div className="mt-10 md:mt-16 flex items-center justify-center gap-3">

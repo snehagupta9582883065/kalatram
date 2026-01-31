@@ -108,7 +108,7 @@ export function ProposalForm() {
                             <button
                                 disabled={isSubmitting}
                                 type="submit"
-                                className="w-full bg-[#f68d2e] hover:bg-[#ff9d4d] text-white rounded-xl py-4 text-base font-black uppercase tracking-wider transition-all shadow-[0_10px_20px_rgba(246,141,46,0.3)] hover:shadow-[0_15px_25px_rgba(246,141,46,0.4)] transform hover:-translate-y-0.5 active:translate-y-0 relative overflow-hidden group/btn"
+                                className="w-full btn-sarpyx rounded-xl py-4 text-base relative overflow-hidden group/btn"
                             >
                                 <span className={cn("relative z-10 flex items-center justify-center gap-2", isSubmitting && "opacity-0")}>
                                     Get My Free Proposal

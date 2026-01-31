@@ -35,8 +35,8 @@ export default function Careers() {
                         </p>
                     </Reveal>
 
-                    <Reveal delay={0.3}width="100%">
-                        <Link href="#openings" className="btn-webfx btn-action py-4 px-10 text-lg inline-flex items-center gap-3">
+                    <Reveal delay={0.3} width="100%">
+                        <Link href="#openings" className="btn-sarpyx btn-action py-4 px-10 text-lg inline-flex items-center gap-3">
                             View Open Roles <ArrowRight className="w-5 h-5" />
                         </Link>
                     </Reveal>
@@ -116,7 +116,7 @@ export default function Careers() {
                             <div className="relative z-10">
                                 <h3 className="text-3xl font-bold mb-4">Don't see the right fit?</h3>
                                 <p className="text-blue-100 mb-8 max-w-xl mx-auto text-lg">
-                                    We're always open to meeting amazing people. Send us your resume and tell us why you'd be a great addition to Kalatram.
+                                    We're always open to meeting amazing people. Send us your resume and tell us why you'd be a great addition to Sarpyx.
                                 </p>
                                 <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#004c8c] font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-lg">
                                     Contact Us <ArrowRight className="ml-2 w-5 h-5" />

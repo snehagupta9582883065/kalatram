@@ -274,7 +274,7 @@ export default function ServicesPageV4() {
                         <p className="text-blue-100 text-xl font-medium mb-10 max-w-2xl mx-auto">
                             Let's collaborate to build something extraordinary.
                         </p>
-                        <Link href="/contact" className="btn-kalatram bg-white text-[#004c8c] hover:bg-gray-100 py-5 px-12 text-lg shadow-xl inline-flex items-center gap-2 border-none">
+                        <Link href="/contact" className="btn-sarpyx bg-white text-[#004c8c] hover:bg-gray-100 py-5 px-12 text-lg shadow-xl inline-flex items-center gap-2 border-none">
                             Schedule a Consultation <ArrowRight size={20} />
                         </Link>
                     </Reveal>
